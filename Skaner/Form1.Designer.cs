@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.InputList = new System.Windows.Forms.ListView();
             this.ordinalNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,11 +48,14 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.inputCounter = new System.Windows.Forms.Label();
             this.checkCounter = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -63,7 +67,7 @@
             this.groupBox1.Controls.Add(this.InputList);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(380, 506);
+            this.groupBox1.Size = new System.Drawing.Size(378, 489);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista";
@@ -77,7 +81,7 @@
             this.InputList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.InputList.Location = new System.Drawing.Point(3, 16);
             this.InputList.Name = "InputList";
-            this.InputList.Size = new System.Drawing.Size(374, 487);
+            this.InputList.Size = new System.Drawing.Size(372, 470);
             this.InputList.TabIndex = 0;
             this.InputList.UseCompatibleStateImageBehavior = false;
             this.InputList.View = System.Windows.Forms.View.Details;
@@ -104,9 +108,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.AutoSize = true;
             this.groupBox2.Controls.Add(this.CheckedList);
-            this.groupBox2.Location = new System.Drawing.Point(389, 3);
+            this.groupBox2.Location = new System.Drawing.Point(387, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(381, 506);
+            this.groupBox2.Size = new System.Drawing.Size(379, 489);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Odczytane";
@@ -120,7 +124,7 @@
             this.CheckedList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CheckedList.Location = new System.Drawing.Point(3, 16);
             this.CheckedList.Name = "CheckedList";
-            this.CheckedList.Size = new System.Drawing.Size(375, 487);
+            this.CheckedList.Size = new System.Drawing.Size(373, 470);
             this.CheckedList.TabIndex = 0;
             this.CheckedList.UseCompatibleStateImageBehavior = false;
             this.CheckedList.View = System.Windows.Forms.View.Details;
@@ -145,7 +149,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox1.Location = new System.Drawing.Point(3, 16);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(514, 40);
+            this.textBox1.Size = new System.Drawing.Size(636, 40);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
@@ -156,9 +160,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.AutoSize = true;
             this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Location = new System.Drawing.Point(141, 12);
+            this.groupBox3.Location = new System.Drawing.Point(15, 75);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(520, 65);
+            this.groupBox3.Size = new System.Drawing.Size(642, 68);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Wprowadź numer seryjny";
@@ -168,7 +172,7 @@
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.AutoSize = true;
             this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Location = new System.Drawing.Point(667, 12);
+            this.groupBox4.Location = new System.Drawing.Point(663, 75);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(121, 68);
             this.groupBox4.TabIndex = 6;
@@ -197,18 +201,18 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 103);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 169);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(773, 512);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(769, 495);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(15, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 65);
+            this.button1.Size = new System.Drawing.Size(120, 57);
             this.button1.TabIndex = 8;
             this.button1.Text = "Wczytaj plik z numerami";
             this.button1.UseVisualStyleBackColor = true;
@@ -224,7 +228,7 @@
             // 
             this.inputCounter.AutoSize = true;
             this.inputCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.inputCounter.Location = new System.Drawing.Point(17, 80);
+            this.inputCounter.Location = new System.Drawing.Point(17, 146);
             this.inputCounter.Name = "inputCounter";
             this.inputCounter.Size = new System.Drawing.Size(128, 20);
             this.inputCounter.TabIndex = 9;
@@ -236,23 +240,48 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkCounter.AutoSize = true;
             this.checkCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkCounter.Location = new System.Drawing.Point(686, 80);
+            this.checkCounter.Location = new System.Drawing.Point(682, 146);
             this.checkCounter.Name = "checkCounter";
             this.checkCounter.Size = new System.Drawing.Size(102, 20);
             this.checkCounter.TabIndex = 10;
             this.checkCounter.Text = "Odczytano: 0";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(6, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(348, 30);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "1. Format danych 01;0000-0000-0001;AAAA-BBBB-CCCC-0001\r\n2. Program obsługuje plik" +
+    "i zapisane w formacie .CSV";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.label2);
+            this.groupBox5.Location = new System.Drawing.Point(141, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(643, 57);
+            this.groupBox5.TabIndex = 12;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Informacje";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 627);
+            this.ClientSize = new System.Drawing.Size(796, 676);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.checkCounter);
             this.Controls.Add(this.inputCounter);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Skaner";
             this.groupBox1.ResumeLayout(false);
@@ -263,6 +292,8 @@
             this.groupBox4.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,6 +319,8 @@
         private System.Windows.Forms.ColumnHeader inventoryNumberCheck;
         private System.Windows.Forms.Label inputCounter;
         private System.Windows.Forms.Label checkCounter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
 

@@ -55,10 +55,22 @@ namespace Skaner
                         label1.Text = foundItem.SubItems[0].Text;
                         CheckedList.Items.Add((ListViewItem)foundItem.Clone());
                         InputList.Items.Remove(foundItem);
-                        textBox1.Text = "";
-                        this.ActiveControl = textBox1;
                         checkCounter.Text = "Odczytano: " + CheckedList.Items.Count;
                     }
+                    else
+                    {
+                        foundItem = CheckedList.Items.Cast<ListViewItem>().Where(x => x.SubItems[1].Text == textBox1.Text).FirstOrDefault();
+                        if(foundItem != null)
+                        {
+                            label1.Text = foundItem.SubItems[0].Text;
+                        }
+                        else
+                        {
+                            label1.Text = "Brak";
+                        }
+                    }
+                    textBox1.Text = "";
+                    this.ActiveControl = textBox1;
                 } 
             }
         }
