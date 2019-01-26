@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Synthesis;
 
 namespace Skaner
 {
@@ -40,7 +41,10 @@ namespace Skaner
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+
+            if (e.KeyCode == Keys.Enter)
             {
                 if (InputList.Items.Count == 0)
                 {
@@ -56,6 +60,7 @@ namespace Skaner
                         CheckedList.Items.Add((ListViewItem)foundItem.Clone());
                         InputList.Items.Remove(foundItem);
                         checkCounter.Text = "Odczytano: " + CheckedList.Items.Count;
+                        synth.Speak("Numer " + label1.Text);
                     }
                     else
                     {
@@ -63,10 +68,13 @@ namespace Skaner
                         if(foundItem != null)
                         {
                             label1.Text = foundItem.SubItems[0].Text;
+                            synth.Speak("Duplikat");
+                            synth.Speak("Numer "+label1.Text);
                         }
                         else
                         {
                             label1.Text = "Brak";
+                            synth.Speak("Brak pozycji w bazie");
                         }
                     }
                     textBox1.Text = "";
