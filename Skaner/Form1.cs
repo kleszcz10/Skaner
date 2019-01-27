@@ -14,9 +14,12 @@ namespace Skaner
 {
     public partial class Form1 : Form
     {
+        public SpeechSynthesizer Synth = new SpeechSynthesizer();
+
         public Form1()
         {
             InitializeComponent();
+            Synth.SetOutputToDefaultAudioDevice();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,6 +34,7 @@ namespace Skaner
                     while ((line = reader.ReadLine()) != null)
                     {
                         var row = line.Split(';');
+                        row[1] = row[1].Trim();
                         InputList.Items.Add(new ListViewItem(row));
                     }
                 }
@@ -41,12 +45,9 @@ namespace Skaner
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-
             if (e.KeyCode == Keys.Enter)
             {
-                if (InputList.Items.Count == 0)
+                if (InputList.Items.Count == 0 && CheckedList.Items.Count == 0)
                 {
                     MessageBox.Show("Lista przedmiotów jest pusta. Proszę wczytać plik z danymi.");
                     label1.Text = "####";
@@ -60,7 +61,7 @@ namespace Skaner
                         CheckedList.Items.Add((ListViewItem)foundItem.Clone());
                         InputList.Items.Remove(foundItem);
                         checkCounter.Text = "Odczytano: " + CheckedList.Items.Count;
-                        synth.Speak("Numer " + label1.Text);
+                        Synth.SpeakAsync("Numer " + label1.Text);
                     }
                     else
                     {
@@ -68,13 +69,12 @@ namespace Skaner
                         if(foundItem != null)
                         {
                             label1.Text = foundItem.SubItems[0].Text;
-                            synth.Speak("Duplikat");
-                            synth.Speak("Numer "+label1.Text);
+                            Synth.SpeakAsync("Duplikat, numer " + label1.Text);
                         }
                         else
                         {
                             label1.Text = "Brak";
-                            synth.Speak("Brak pozycji w bazie");
+                            Synth.SpeakAsync("Brak pozycji w bazie");
                         }
                     }
                     textBox1.Text = "";
