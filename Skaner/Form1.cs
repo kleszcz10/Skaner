@@ -62,6 +62,10 @@ namespace Skaner
                         InputList.Items.Remove(foundItem);
                         checkCounter.Text = "Odczytano: " + CheckedList.Items.Count;
                         Synth.SpeakAsync("Numer " + label1.Text);
+                        if (InputList.Items.Count == 0)
+                        {
+                            Synth.SpeakAsync("Koniec listy");
+                        }
                     }
                     else
                     {
@@ -70,6 +74,10 @@ namespace Skaner
                         {
                             label1.Text = foundItem.SubItems[0].Text;
                             Synth.SpeakAsync("Duplikat, numer " + label1.Text);
+                        }
+                        else if (InputList.Items.Count == 0)
+                        {
+                            Synth.SpeakAsync("Koniec listy");
                         }
                         else
                         {
