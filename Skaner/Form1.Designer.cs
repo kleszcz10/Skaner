@@ -67,7 +67,7 @@
             this.groupBox1.Controls.Add(this.InputList);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(378, 489);
+            this.groupBox1.Size = new System.Drawing.Size(379, 489);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista";
@@ -81,7 +81,7 @@
             this.InputList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.InputList.Location = new System.Drawing.Point(3, 16);
             this.InputList.Name = "InputList";
-            this.InputList.Size = new System.Drawing.Size(372, 470);
+            this.InputList.Size = new System.Drawing.Size(373, 470);
             this.InputList.TabIndex = 0;
             this.InputList.UseCompatibleStateImageBehavior = false;
             this.InputList.View = System.Windows.Forms.View.Details;
@@ -108,9 +108,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.AutoSize = true;
             this.groupBox2.Controls.Add(this.CheckedList);
-            this.groupBox2.Location = new System.Drawing.Point(387, 3);
+            this.groupBox2.Location = new System.Drawing.Point(388, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(379, 489);
+            this.groupBox2.Size = new System.Drawing.Size(378, 489);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Odczytane";
@@ -124,7 +124,7 @@
             this.CheckedList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CheckedList.Location = new System.Drawing.Point(3, 16);
             this.CheckedList.Name = "CheckedList";
-            this.CheckedList.Size = new System.Drawing.Size(373, 470);
+            this.CheckedList.Size = new System.Drawing.Size(372, 470);
             this.CheckedList.TabIndex = 0;
             this.CheckedList.UseCompatibleStateImageBehavior = false;
             this.CheckedList.View = System.Windows.Forms.View.Details;
@@ -152,7 +152,7 @@
             this.textBox1.Size = new System.Drawing.Size(636, 40);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // groupBox3
             // 
