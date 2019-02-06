@@ -45,6 +45,7 @@ namespace Skaner
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
+            var selectedColumn = this.comboBox1.SelectedIndex + 1;
             if (e.KeyCode == Keys.Enter)
             {
                 if (InputList.Items.Count == 0 && CheckedList.Items.Count == 0)
@@ -54,7 +55,7 @@ namespace Skaner
                 }
                 else
                 {
-                    var foundItem = InputList.Items.Cast<ListViewItem>().Where(x => x.SubItems[1].Text == textBox1.Text).FirstOrDefault();
+                    var foundItem = InputList.Items.Cast<ListViewItem>().Where(x => x.SubItems[selectedColumn].Text == textBox1.Text).FirstOrDefault();
                     if(foundItem != null)
                     {
                         label1.Text = foundItem.SubItems[0].Text;
@@ -69,7 +70,7 @@ namespace Skaner
                     }
                     else
                     {
-                        foundItem = CheckedList.Items.Cast<ListViewItem>().Where(x => x.SubItems[1].Text == textBox1.Text).FirstOrDefault();
+                        foundItem = CheckedList.Items.Cast<ListViewItem>().Where(x => x.SubItems[selectedColumn].Text == textBox1.Text).FirstOrDefault();
                         if(foundItem != null)
                         {
                             label1.Text = foundItem.SubItems[0].Text;
@@ -89,6 +90,11 @@ namespace Skaner
                     this.ActiveControl = textBox1;
                 } 
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.comboBox1.SelectedIndex = 0;
         }
     }
 }
