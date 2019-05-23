@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Speech.Synthesis;
+using Xceed.Words.NET;
 
 namespace Skaner
 {
@@ -95,6 +96,46 @@ namespace Skaner
         private void Form1_Load(object sender, EventArgs e)
         {
             this.comboBox1.SelectedIndex = 0;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(CheckedList.Items.Count < 1)
+            {
+                MessageBox.Show("Brak pozycji do zapisania", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            using (DocX document = DocX.Load(@".\Template\template.docx"))
+            {
+                var table = document.Tables.First();
+                var rowPattern = table.Rows[1];
+                int itemsCounter = 1;
+                foreach(ListViewItem item in CheckedList.Items)
+                {
+                    var items = item.SubItems;
+                    AddItemToTable(table, rowPattern, new string[] { $"{itemsCounter}", "", $"{items[1].Text}", $"{items[2].Text}" });
+                }
+                rowPattern.Remove();
+                this.saveFileDialog1.FileName = "formularz.docx";
+                this.saveFileDialog1.Filter = "Dokument Word(*.docx)| *.docx";
+                if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    document.SaveAs(this.saveFileDialog1.FileName);
+                }
+                
+            }
+        }
+
+        private static void AddItemToTable(Table table, Row rowPattern, string[] rowData)
+        {
+            // Insert a copy of the rowPattern at the last index in the table.
+            var newItem = table.InsertRow(rowPattern, table.RowCount - 1);
+
+            // Replace the default values of the newly inserted row.
+            newItem.ReplaceText("%NUMBER%", rowData[0]);
+            newItem.ReplaceText("%TYPE%", rowData[1]);
+            newItem.ReplaceText("%SERIAL_NUMBERS%", rowData[2]);
+            newItem.ReplaceText("%INVENTORY_NUMBERS%", rowData[3]);
         }
     }
 }
