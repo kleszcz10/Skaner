@@ -109,7 +109,6 @@ namespace Skaner
             {
                 var table = document.Tables.First();
                 var rowPattern = table.Rows[1];
-                int itemsCounter = 1;
                 foreach(ListViewItem item in CheckedList.Items)
                 {
                     var items = item.SubItems;

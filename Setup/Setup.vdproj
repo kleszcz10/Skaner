@@ -15,12 +15,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_2F99795F7B37316F5D456E9F7FEF7E87"
-        "OwnerKey" = "8:_3EFC0777A164477CBC50067F4FC6D40A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_3EFC0777A164477CBC50067F4FC6D40A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -39,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DFBC40473B6614EFBD762433176F5F89"
+        "OwnerKey" = "8:_3EFC0777A164477CBC50067F4FC6D40A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_3EFC0777A164477CBC50067F4FC6D40A"
         "MsmSig" = "8:_UNDEFINED"
@@ -46,7 +46,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2F99795F7B37316F5D456E9F7FEF7E87"
+        "OwnerKey" = "8:_DFBC40473B6614EFBD762433176F5F89"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -150,37 +150,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2F99795F7B37316F5D456E9F7FEF7E87"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Xceed.Words.NET, Version=1.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_2F99795F7B37316F5D456E9F7FEF7E87"
-                    {
-                    "Name" = "8:Xceed.Words.NET.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Xceed.Words.NET.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_BB1528E23ECC44DD87707B4985B9A328"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5486A2AD86C9435095C4645FA45019E4"
             {
             "SourcePath" = "8:..\\Skaner\\iconfinder_finance-10_808669.ico"
@@ -215,6 +184,37 @@
                     }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_BB1528E23ECC44DD87707B4985B9A328"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DFBC40473B6614EFBD762433176F5F89"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Xceed.Words.NET, Version=1.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DFBC40473B6614EFBD762433176F5F89"
+                    {
+                    "Name" = "8:Xceed.Words.NET.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Xceed.Words.NET.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BB1528E23ECC44DD87707B4985B9A328"
@@ -289,7 +289,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup"
         "ProductCode" = "8:{732D173F-5112-4E91-A231-DABDAC60069C}"
-        "PackageCode" = "8:{259F669D-7679-4CBA-94B6-4E17BA468D44}"
+        "PackageCode" = "8:{5835360C-1F5E-4650-AFAC-F258FE7EDFD6}"
         "UpgradeCode" = "8:{2FD3A081-DF01-4C04-ADA6-310B900CCB5B}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -297,7 +297,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Adam Trepka"
+        "Manufacturer" = "8:Skaner"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Setup"
@@ -310,7 +310,7 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:2"
+        "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
@@ -419,7 +419,7 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_E5FC1E09BA8B46B8B941DA496365E6A1"
             "Folder" = "8:_E5FC1E09BA8B46B8B941DA496365E6A1"
-            "WorkingFolder" = "8:_E5FC1E09BA8B46B8B941DA496365E6A1"
+            "WorkingFolder" = "8:_BB1528E23ECC44DD87707B4985B9A328"
             "Icon" = "8:_5486A2AD86C9435095C4645FA45019E4"
             "Feature" = "8:"
             }
