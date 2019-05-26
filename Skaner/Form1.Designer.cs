@@ -54,6 +54,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.ClearListBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -72,7 +73,7 @@
             this.groupBox1.Controls.Add(this.InputList);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(366, 499);
+            this.groupBox1.Size = new System.Drawing.Size(362, 499);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista";
@@ -86,7 +87,7 @@
             this.InputList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.InputList.Location = new System.Drawing.Point(3, 16);
             this.InputList.Name = "InputList";
-            this.InputList.Size = new System.Drawing.Size(360, 480);
+            this.InputList.Size = new System.Drawing.Size(356, 480);
             this.InputList.TabIndex = 0;
             this.InputList.UseCompatibleStateImageBehavior = false;
             this.InputList.View = System.Windows.Forms.View.Details;
@@ -112,24 +113,27 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.AutoSize = true;
+            this.groupBox2.Controls.Add(this.ClearListBtn);
             this.groupBox2.Controls.Add(this.CheckedList);
-            this.groupBox2.Location = new System.Drawing.Point(375, 3);
+            this.groupBox2.Location = new System.Drawing.Point(371, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(367, 499);
+            this.groupBox2.Size = new System.Drawing.Size(371, 499);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Odczytane";
             // 
             // CheckedList
             // 
+            this.CheckedList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CheckedList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ordinalNumberCheck,
             this.serialNumberCheck,
             this.inventoryNumberCheck});
-            this.CheckedList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CheckedList.Location = new System.Drawing.Point(3, 16);
             this.CheckedList.Name = "CheckedList";
-            this.CheckedList.Size = new System.Drawing.Size(361, 480);
+            this.CheckedList.Size = new System.Drawing.Size(361, 451);
             this.CheckedList.TabIndex = 0;
             this.CheckedList.UseCompatibleStateImageBehavior = false;
             this.CheckedList.View = System.Windows.Forms.View.Details;
@@ -202,8 +206,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.06502F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.93498F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.5302F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.4698F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 159);
@@ -307,6 +311,17 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // ClearListBtn
+            // 
+            this.ClearListBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ClearListBtn.Location = new System.Drawing.Point(3, 473);
+            this.ClearListBtn.Name = "ClearListBtn";
+            this.ClearListBtn.Size = new System.Drawing.Size(365, 23);
+            this.ClearListBtn.TabIndex = 1;
+            this.ClearListBtn.Text = "Wyczyść listę";
+            this.ClearListBtn.UseVisualStyleBackColor = true;
+            this.ClearListBtn.Click += new System.EventHandler(this.ClearListBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,6 +382,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button ClearListBtn;
     }
 }
 

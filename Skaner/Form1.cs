@@ -113,7 +113,7 @@ namespace Skaner
                 foreach(ListViewItem item in CheckedList.Items)
                 {
                     var items = item.SubItems;
-                    AddItemToTable(table, rowPattern, new string[] { $"{itemsCounter}", "", $"{items[1].Text}", $"{items[2].Text}" });
+                    AddItemToTable(table, rowPattern, new string[] { $"{items[0].Text ?? items[0].Text : ''}", "", $"{items[1].Text ?? items[1].Text: ''}", $"{items[2].Text ?? items[2].Text: ''}" });
                 }
                 rowPattern.Remove();
                 this.saveFileDialog1.FileName = "formularz.docx";
@@ -121,6 +121,11 @@ namespace Skaner
                 if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     document.SaveAs(this.saveFileDialog1.FileName);
+                    var removeItemsFromTable = MessageBox.Show("Czy chesz wyczyścić zawartość tabeli?", "Czy wyczyścić?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if(removeItemsFromTable == DialogResult.Yes)
+                    {
+                        CheckedList.Items.Clear();
+                    }
                 }
                 
             }
@@ -136,6 +141,15 @@ namespace Skaner
             newItem.ReplaceText("%TYPE%", rowData[1]);
             newItem.ReplaceText("%SERIAL_NUMBERS%", rowData[2]);
             newItem.ReplaceText("%INVENTORY_NUMBERS%", rowData[3]);
+        }
+
+        private void ClearListBtn_Click(object sender, EventArgs e)
+        {
+            var clearCheckedList = MessageBox.Show("Czy chcesz wyczyścić listę?", "Jesteś pewien?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(clearCheckedList == DialogResult.Yes)
+            {
+                CheckedList.Items.Clear();
+            }
         }
     }
 }
