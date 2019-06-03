@@ -112,18 +112,25 @@ namespace Skaner
                 foreach(ListViewItem item in CheckedList.Items)
                 {
                     var items = item.SubItems;
-                    AddItemToTable(table, rowPattern, new string[] { $"{items[0].Text ?? items[0].Text : ''}", "", $"{items[1].Text ?? items[1].Text: ''}", $"{items[2].Text ?? items[2].Text: ''}" });
+                    AddItemToTable(table, rowPattern, new string[] { items[0]?.Text,string.Empty, items[1]?.Text, items[2]?.Text });
                 }
                 rowPattern.Remove();
                 this.saveFileDialog1.FileName = "formularz.docx";
                 this.saveFileDialog1.Filter = "Dokument Word(*.docx)| *.docx";
                 if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    document.SaveAs(this.saveFileDialog1.FileName);
-                    var removeItemsFromTable = MessageBox.Show("Czy chesz wyczyścić zawartość tabeli?", "Czy wyczyścić?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if(removeItemsFromTable == DialogResult.Yes)
+                    try
                     {
-                        CheckedList.Items.Clear();
+                        document.SaveAs(this.saveFileDialog1.FileName);
+                        var removeItemsFromTable = MessageBox.Show("Czy chesz wyczyścić zawartość tabeli?", "Czy wyczyścić?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (removeItemsFromTable == DialogResult.Yes)
+                        {
+                            CheckedList.Items.Clear();
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 
