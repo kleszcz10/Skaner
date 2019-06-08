@@ -111,8 +111,16 @@ namespace Skaner
                 var rowPattern = table.Rows[1];
                 foreach(ListViewItem item in CheckedList.Items)
                 {
+
+                    if (item.SubItems.Count < 3) { item.SubItems.Add(string.Empty); }
                     var items = item.SubItems;
-                    AddItemToTable(table, rowPattern, new string[] { items[0]?.Text,string.Empty, items[1]?.Text, items[2]?.Text });
+                    var tableData = new string[4];
+                    tableData[0] = string.IsNullOrEmpty(items[0].Text) ? string.Empty : items[0].Text;
+                    tableData[1] = string.Empty;
+                    tableData[2] = string.IsNullOrEmpty(items[1].Text) ? string.Empty : items[1].Text;
+                    tableData[3] = string.IsNullOrEmpty(items[2].Text) ? string.Empty : items[2].Text;
+
+                    AddItemToTable(table, rowPattern, tableData);
                 }
                 rowPattern.Remove();
                 this.saveFileDialog1.FileName = "formularz.docx";
